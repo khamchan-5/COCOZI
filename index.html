@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CampShop - ร้านอุปกรณ์แคมป์</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / Hero -->
+  <header class="hero">
+    <div class="hero-inner">
+      <img src="images/hero.png" alt="CampShop" class="hero-logo" />
+      <div>
+        <h1>CampShop</h1>
+        <p>อุปกรณ์แคมป์ครบ จบในที่เดียว</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Nav (จะถูกเติมด้วย script.js ถ้ามี element นี้) -->
+  <nav id="categoryNav" class="category-nav"></nav>
+
+  <!-- Search -->
+  <div class="search-wrap">
+    <input id="searchInput" type="search" placeholder="ค้นหาสินค้า (ชื่อ/คำอธิบาย)..." />
+  </div>
+
+  <!-- Products Grid -->
+  <main>
+    <section id="productGrid" class="grid"></section>
+  </main>
+
+  <!-- Modal (แสดงรายละเอียดสินค้า) -->
+  <div id="modalBackdrop" class="modal-backdrop">
+    <div class="modal">
+      <button id="modalClose" class="modal-close" aria-label="close">✕</button>
+      <img id="modalImg" alt="รูปสินค้า" />
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <div class="modal-bottom">
+        <strong id="modalPrice"></strong>
+        จำนวน: <input id="modalQty" type="number" min="1" value="1" />
+        <button id="modalAdd" class="primary">ใส่ตะกร้า</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Section -->
+  <aside class="cart-box">
+    <h3>ตะกร้าสินค้า</h3>
+    <table class="cart-table">
+      <thead><tr><th>สินค้า</th><th>ราคา</th><th>จำนวน</th><th>รวม</th><th></th></tr></thead>
+      <tbody id="cartItems"></tbody>
+    </table>
+    <div class="cart-summary">
+      <div>ราคารวมทั้งหมด: <span id="cartTotal">0</span> บาท</div>
+      <!-- ปุ่มชำระเงิน (เรียกใช้ goToPayment()) -->
+      <button id="checkoutBtn" class="checkout-btn">💳 ไปชำระเงิน</button>
+      <a href="#" id="clearCart" class="secondary">ล้างตะกร้า</a>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <h4>ติดต่อเรา</h4>
+      <div class="socials">
+        <a id="waLink" href="https://wa.me/เบีapp" target="_blank">WhatsApp</a>
+        <a id="fbLink" href="https://facebook.com/campshop" target="_blank">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <h4>QR ชำระเงิน</h4>
+      <img src="images/QR Pay.png" alt="QR Pay" class="qr-small" />
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

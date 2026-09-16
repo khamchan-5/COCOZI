@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ชำระเงิน - CampShop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main style="max-width:720px;margin:40px auto;padding:20px">
+    <h1>สแกนเพื่อชำระเงิน</h1>
+    <h2 id="showTotal" style="color:#059669">ยอดที่ต้องชำระ: 0 บาท</h2>
+
+    <div style="background:#fff;padding:18px;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.08);text-align:center">
+      <img src="images/QR Pay.png" alt="QR Pay" style="width:260px;max-width:90%" />
+      <p style="margin-top:12px;color:#555">กรุณาสแกน QR เพื่อชำระเงิน แล้วส่งสลิปหรือแจ้งยอดที่ WhatsApp ของเรา</p>
+      <h3 style="margin-top:16px;color:#1a73e8">🙏 ขอบคุณที่อุดหนุนครับ 🙏</h3>
+      <a href="index.html" class="secondary" style="margin-top:16px;display:inline-block">กลับหน้าร้าน</a>
+    </div>
+  </main>
+  <!-- ปุ่มชำระเงินผ่าน WhatsApp -->
+<a id="whatsappCheckoutBtn" 
+   href="https://web.whatsapp.com/" 
+   target="_blank" 
+   class="btn btn-whatsapp">
+   ชำระเงินผ่าน WhatsApp
+</a>
+
+  <script>
+    // อ่านยอดจาก localStorage
+    const total = localStorage.getItem('campshop_total') || 0;
+    document.getElementById('showTotal').innerText = 'ยอดที่ต้องชำระ: ' + total + ' บาท';
+    // ถ้าต้องการลบเมื่อแสดงแล้ว:
+    // localStorage.removeItem('campshop_total');
+  </script>
+</body>
+</html>
